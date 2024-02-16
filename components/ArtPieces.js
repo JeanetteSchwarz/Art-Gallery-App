@@ -1,9 +1,14 @@
 import ArtPiecePreview from "./ArtPiecePreview";
+import styled from "styled-components";
 
-export default function ArtPieces(pieces) {
+export default function ArtPieces({ pieces }) {
+  const StyledList = styled.ul`
+    list-style-type: none;
+  `;
+
   return (
     <>
-      <ul>
+      <StyledList>
         {pieces.map((piece) => (
           <ArtPiecePreview
             key={piece.slug}
@@ -12,7 +17,7 @@ export default function ArtPieces(pieces) {
             title={piece.name}
           />
         ))}
-      </ul>
+      </StyledList>
     </>
   );
 }

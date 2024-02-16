@@ -5,9 +5,10 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function HomePage() {
   const { data, error, isLoading } = useSWR(
-    `https://example-apis.vercel.app/api/art`,
+    "https://example-apis.vercel.app/api/art",
     fetcher
   );
+
   console.log(data);
 
   if (isLoading) {
@@ -18,7 +19,10 @@ export default function HomePage() {
     return <h2>Ooops, something went wrong... </h2>;
   }
 
-  const piece = data;
-
-  return <ArtPieces pieces={data} />;
+  return (
+    <>
+      <h1>Art Gallery</h1>
+      <ArtPieces pieces={data} />;
+    </>
+  );
 }
