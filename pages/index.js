@@ -1,28 +1,22 @@
-import useSWR from "swr";
-import ArtPieces from "@/components/ArtPieces";
+import ArtPieces from "../components/ArtPieces";
+import styled from "styled-components";
+import Spotlight from "../components/Spotlight";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-
-export default function HomePage() {
-  const { data, error, isLoading } = useSWR(
-    "https://example-apis.vercel.app/api/art",
-    fetcher
-  );
-
-  console.log(data);
-
-  if (isLoading) {
-    return <h2>Please hold the line...</h2>;
-  }
-
-  if (error) {
-    return <h2>Ooops, something went wrong... </h2>;
-  }
-
+export default function SpotlightPage({ pieces }) {
   return (
     <>
-      <h1>Art Gallery</h1>
-      <ArtPieces pieces={data} />;
+      <StyledHeadline>Famous Art Gallery</StyledHeadline>
+      <StyledSpotlightHeadline>Todays Spotlight</StyledSpotlightHeadline>
+      <Spotlight pieces={pieces} />
+      {/* <ArtPieces pieces={pieces} />; */}
     </>
   );
 }
+
+const StyledHeadline = styled.h1`
+  text-align: center;
+`;
+
+const StyledSpotlightHeadline = styled.h2`
+  text-align: center;
+`;

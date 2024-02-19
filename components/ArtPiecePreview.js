@@ -1,18 +1,25 @@
-import Image from "./Image";
+import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 
-export default function ArtPiecePreview({ image, title, artist }) {
-  const StyledArticle = styled.article`
-    color: blue;
-  `;
+export default function ArtPiecePreview({ image, title, artist, slug }) {
+  // console.log(slug);
 
   return (
-    <>
-      <StyledArticle>
-        <Image image={image} />
-        <h3>{title}</h3>
-        <h3>{artist}</h3>
-      </StyledArticle>
-    </>
+    <StyledList>
+      <Link href={`/art-pieces/${slug}`}>
+        <Image src={image} alt={title} height={300} width={300} />
+      </Link>
+      <h2>{title}</h2>
+      <h3>{artist}</h3>
+    </StyledList>
   );
 }
+
+const StyledList = styled.li`
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+`;
