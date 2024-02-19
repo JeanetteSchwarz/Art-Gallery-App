@@ -1,4 +1,5 @@
 import ArtPiecePreview from "./ArtPiecePreview";
+import styled from "styled-components";
 
 export default function Spotlight({ pieces }) {
   function getRandomPiece() {

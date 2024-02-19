@@ -2,13 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 
-export default function ArtPiecePreview({ image, title, artist, slug }) {
-  // console.log(slug);
-
+export default function ArtPiecePreview({ image, title, name, artist, slug }) {
   return (
     <StyledList>
       <Link href={`/art-pieces/${slug}`}>
-        <Image src={image} alt={title} height={300} width={300} />
+        <Image src={image} alt={name} height={300} width={300} />
       </Link>
       <h2>{title}</h2>
       <h3>{artist}</h3>

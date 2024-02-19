@@ -1,10 +1,11 @@
-import Link from "next/link";
 import ArtPiecePreview from "../../components/ArtPiecePreview";
+import styled from "styled-components";
 
 export default function ArtPieces({ pieces }) {
   console.log(pieces);
   return (
     <>
+      <StyledHeadline>Gallery</StyledHeadline>
       {pieces.map((piece) => (
         <>
           <ArtPiecePreview
@@ -19,3 +20,7 @@ export default function ArtPieces({ pieces }) {
     </>
   );
 }
+
+const StyledHeadline = styled.h1`
+  text-align: center;
+`;
