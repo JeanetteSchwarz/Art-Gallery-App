@@ -1,5 +1,6 @@
 import ArtPiecePreview from "./ArtPiecePreview";
 import styled from "styled-components";
+import FavButton from "./Favorite-Button";
 
 export default function Spotlight({ pieces }) {
   function getRandomPiece() {
@@ -24,6 +25,7 @@ export default function Spotlight({ pieces }) {
         artist={spotlightArtist}
         slug={randomPiece.slug}
       />
+      <FavButton />
     </>
   );
 }

@@ -1,4 +1,3 @@
-import ArtPieces from "../components/ArtPieces";
 import styled from "styled-components";
 import Spotlight from "../components/Spotlight";
 
@@ -8,7 +7,6 @@ export default function SpotlightPage({ pieces }) {
       <StyledHeadline>Famous Art Gallery</StyledHeadline>
       <StyledSpotlightHeadline>Todays Spotlight</StyledSpotlightHeadline>
       <Spotlight pieces={pieces} />
-      {/* <ArtPieces pieces={pieces} />; */}
     </>
   );
 }
