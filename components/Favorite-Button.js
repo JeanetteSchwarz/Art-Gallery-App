@@ -1,15 +1,23 @@
+import styled from "styled-components";
+
 export default function FavButton(isFavorite, onToggleFavorite, slug) {
   return (
     <>
-      <button
-        type="button"
-        onClick={() => {
-          onToggleFavorite(slug);
-        }}
-        $isFavorite={isFavorite}
-      >
+      <StyledFavButton type="button" onClick={onToggleFavorite}>
         Liebs
-      </button>
+      </StyledFavButton>
     </>
   );
 }
+const StyledFavButton = styled.button`
+  &:active {
+    background-color: blue;
+  }
+`;
+
+{
+  /* <button type="button" onClick={toggleLiked}>
+  {liked ? "Remove like" : "Add like"} */
+}
+
+//isFavorite={isFavorite}
